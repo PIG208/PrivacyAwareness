@@ -7,10 +7,15 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-</view>
-<view class="bg-white padding  margin-top-xs">
+  <view class="bg-black padding margin-tp-xs">
+  <view class="text-sl text-color-white">
+  <view class="text-center">聊天配对小程序</view>
+  </view>
+
+  </view>
+<view class="bg-black padding margin-tp-xs"> 
   <view class="cu-steps steps-arrow">
-    <view class="cu-item" wx:for="{{stepsList}}" wx:key>
+    <view class="cu-item text-color-white" wx:for="{{stepsList}}" wx:key>
       <text class="cuIcon-{{item.icon}}"></text> {{item.name}}
     </view>
   </view>
@@ -23,7 +28,8 @@
     <text class="word">疫情期间，隔离中的我们都需要一个知己！</text>
     <text class="word">来试试这个小程序吧 它能帮你找到那个人！</text>
   </view>
-  <view>
-    <button class="user-motto" bindtap="jumpPage">介绍一下你自己</button>
+  <view class=" btn-container bg-black" >
+    <button  bindtap="jumpPage">介绍一下你自己</button>
   </view>
+</view>
 </view>
