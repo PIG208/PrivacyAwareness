@@ -8,28 +8,27 @@
     </block>
   </view>
   <view class="bg-black padding margin-tp-xs">
-  <view class="text-sl text-color-white">
-  <view class="text-center">聊天配对小程序</view>
-  </view>
-
-  </view>
-<view class="bg-black padding margin-tp-xs"> 
-  <view class="cu-steps steps-arrow">
-    <view class="cu-item text-color-white" wx:for="{{stepsList}}" wx:key>
-      <text class="cuIcon-{{item.icon}}"></text> {{item.name}}
+    <view class="text-sl text-color-white">
+      <view class="text-center">聊天配对小程序</view>
     </view>
   </view>
-</view>
-<view class="bg-black">
-  <view class="intro">
-    <text class="word">老人为何一直郁郁寡欢？</text>
-    <text class="word">孩子为何常常嚎啕大哭？</text>
-    <text class="word">父母又为何整日精神不振？</text>
-    <text class="word">疫情期间，隔离中的我们都需要一个知己！</text>
-    <text class="word">来试试这个小程序吧 它能帮你找到那个人！</text>
+  <view class="bg-black padding margin-tp-xs" style="width:100%"> 
+    <view class="cu-steps steps-arrow">
+      <view class="cu-item text-color-white" wx:for="{{stepsList}}" wx:key>
+        <text class="cuIcon-{{item.icon}}"></text> {{item.name}}
+      </view>
+    </view>
   </view>
-  <view class=" btn-container bg-black" >
-    <button  bindtap="jumpPage">介绍一下你自己</button>
+  <view class="bg-black">
+    <view class="intro">
+      <text class="word">老人为何一直郁郁寡欢？</text>
+      <text class="word">孩子为何常常嚎啕大哭？</text>
+      <text class="word">父母又为何整日精神不振？</text>
+      <text class="word">疫情期间，隔离中的我们都需要一个知己！</text>
+      <text class="word">来试试这个小程序吧 它能帮你找到那个人！</text>
+    </view>
+    <view class=" btn-container bg-black" >
+      <button  bindtap="jumpPage">介绍一下你自己</button>
+    </view>
   </view>
-</view>
 </view>

@@ -5,7 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    privacyInfo:[{
+      icon: "circlefill",
+      text: "手机号码，邮箱bla"
+    },{
+      icon: "circlefill",
+      text: "你的姓名信息"
+    },{
+      icon: "circlefill",
+      text: "兴趣爱好"
+    }]
   },
 
   /**

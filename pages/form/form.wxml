@@ -1,18 +1,15 @@
 <!--pages/form/form.wxml-->
-
-<form  bindsubmit="formSubmit">
-
-
-  <view class="cu-form-group margin-top">
-    <view class="title ">姓名</view>
+<form bindsubmit="formSubmit">
+  <view class="cu-form-group">
+    <view class="title text-sl"><text>姓名</text></view>
     <input name="username" placeholder="请输入姓名"></input>
   </view>
   <view class="cu-form-group">
-    <view class="title ">电话号码</view>
+    <view class="title">电话号码</view>
     <input name="phoneNum" placeholder="请输入电话号码"></input>
   </view>
   <view class="cu-form-group">
-    <view class="title ">邮箱</view>
+    <view class="title">邮箱</view>
     <input name="email" placeholder="请输入邮箱"></input>
   </view>
   <view class="cu-form-group">
@@ -20,6 +17,7 @@
     <input name="interests" placeholder="任何感兴趣的事物"></input>
   </view>
   <view class="cu-bar btn-group">
-    <button class="cu-btn bg-blue shadow-blur round" form-type="submit">提交</button>
+    <button class="cu-btn bg-green shadow-blur" form-type="submit">提交</button>
+    <button class="cu-btn bg-red shadow-blur" form-type="submit">拒绝</button>
   </view>
 </form>
