@@ -18,6 +18,11 @@
   76/100
   </view>
 </view>
+<view class="margin-top bg-green solid-bottom padding">
+  <view class="text-center text-lg">
+    <text class="text-white">分享</text>
+  </view>
+</view>
 
 <view class="cu-chat">
   <view class="cu-item self">
