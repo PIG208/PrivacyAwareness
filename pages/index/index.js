@@ -19,12 +19,13 @@ Page({
     }],
   },
   //事件处理函数
+  
   jumpPage: function(){
     if(this.data.userInfo != undefined){
-      app.globalData.authorizationCount = 1
+      app.globalData.authorizationCount[0]=true;
     }
     else {
-      app.globalData.authorizationCount = 0
+      app.globalData.authorizationCount[0]=false;
     }
     wx.navigateTo({
       url: '/pages/form/form',
@@ -36,6 +37,7 @@ Page({
     })
   },
   onLoad: function () {
+    app.globalData.authorizationCount = [];
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

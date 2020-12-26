@@ -9,13 +9,13 @@ Page({
 
   },
   onLoad: function(){
-    console.log(app.globalData.authorizationCount);
+    app.globalData.authorizationCount[1]=false;
   },
   formSubmit: function(e){
     wx.authorize({
       scope: 'scope.userLocation',
       success: function(){
-        app.globalData.authorizationCount++;
+        app.globalData.authorizationCount[1]=true;
       },
       complete: function(){
         wx.navigateTo({

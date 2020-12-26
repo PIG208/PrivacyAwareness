@@ -21,7 +21,8 @@ Page({
       text: "兴趣爱好"
     },{
       icon: "circlefill",
-      text: "头像和用户名"
+      text: "头像和用户名",
+      leaked: false
     },{
       icon: "circlefill",
       text: "地址信息"
@@ -33,7 +34,7 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      authorizationCount: app.globalData.authorizationCount,
+      authorizationCount: 0,
       privacyCount: 0
     });
     const eventChannel = this.getOpenerEventChannel();
@@ -55,16 +56,30 @@ Page({
         index++;
       });
       this.setData({
+        privacyCount: inputCount,
         privacyInfo: this.data.privacyInfo
-      });
-      this.setData({
-        privacyCount: inputCount
       });
     });
     eventChannel.on("acceptRefused", data => {
       this.setData({
         refused: true
       });
+    }); 
+    let aut=0;
+    console.log(app.globalData.authorizationCount);
+    if(app.globalData.authorizationCount[0]==true)
+    {
+      this.data.privacyInfo[4].leaked=true;
+      aut++;
+    }
+    if(app.globalData.authorizationCount[1]==true)
+    {
+      this.data.privacyInfo[5].leaked=true;
+      aut++;
+    }
+    this.setData({
+      privacyInfo: this.data.privacyInfo,
+      authorizationCount: aut
     });
   },
 
