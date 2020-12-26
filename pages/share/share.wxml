@@ -1,0 +1,26 @@
+<!--pages/share/share.wxml-->
+
+<view class="bg-white padding solid-bottom margin-top">
+<view class="text-black text-left"> 
+       <view class="text-xl"> 你想把我们分享给谁？</view>
+</view>
+</view>
+
+  <view class="padding flex flex-direction bg-white margin-top">
+    <view class="text-black text-left"> 
+       <view class="text-xl">和同年龄的小哥哥小姐姐们一起学习！</view>
+    </view> 
+    <button class="cu-btn bg-blue margin-tb-sm lg">学生</button>
+  </view>
+  <view class="padding flex flex-direction bg-white margin-top">
+    <view class="text-black text-left"> 
+       <view class="text-xl"> 与其他家长一起分享育儿经验！</view>
+    </view> 
+    <button class="cu-btn bg-blue margin-tb-sm lg">家长</button>
+  </view>
+  <view class="padding flex flex-direction bg-white margin-top">
+    <view class="text-black text-left"> 
+       <view class="text-xl"> 讨论长寿的秘诀！</view>
+    </view> 
+    <button class="cu-btn bg-blue margin-tb-sm lg">老人</button>
+  </view>
