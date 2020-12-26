@@ -9,7 +9,7 @@ Page({
   },
   formSubmit: function(e){
     wx.navigateTo({
-      url: "../result/result",
+      url: "../progressbar/progressbar",
       success: function(res) {
         res.eventChannel.emit("acceptDataFromOpenedPage", e.detail.value)
       }
