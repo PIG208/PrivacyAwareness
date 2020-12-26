@@ -1,5 +1,4 @@
 /**index.wxss**/
-
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -18,12 +17,11 @@
   color:#ffff;
 }
 
-.usermotto {
+.btn-container {
   margin-top: 50px;
 }
 
 .intro{
-  margin-top: 50px;
   align-items:center;
   display:flex;
   flex-flow: column;
