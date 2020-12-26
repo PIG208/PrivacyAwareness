@@ -18,6 +18,6 @@
   </view>
   <view class="cu-bar btn-group">
     <button class="cu-btn bg-green shadow-blur" form-type="submit">提交</button>
-    <button class="cu-btn bg-red shadow-blur" form-type="submit">拒绝</button>
+    <button class="cu-btn bg-red shadow-blur" bindtap="refuseSubmit">拒绝</button>
   </view>
 </form>

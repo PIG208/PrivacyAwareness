@@ -1,9 +1,9 @@
 <!--pages/progress bar/progressbar.wxml-->
-  <view class="padding bg-white round margin-top">
+  <view class="padding bg-white margin-top solid-bottom">
   <view class="cu-progress">
     <view class="bg-red" style="width:{{pro}}%;"></view>
   </view>
   </view>
-  <view class="text-black text-center"> 
+  <view class="bg-white padding text-center"> 
      <view class="text-xl">请耐心等待！您的好友匹配结果即将出炉</view>
   </view>

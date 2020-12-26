@@ -1,12 +1,15 @@
 <!--pages/result/result.wxml-->
+<view class="margin-top bg-white solid-bottom padding text-lg" wx:if="{{refused}}">
+  恭喜，你通过拒绝填写自己的个人信息防止了信息泄露！
+</view>
 <view class="margin-top bg-white solid-bottom padding text-lg">
-  在浏览的过程中，你为我们授权了{{}}项权限，填写了{{}}条隐私信息
+  在浏览的过程中，你为我们授权了{{authorizationCount}}项权限，填写了{{privacyCount}}条隐私信息
 </view>
 <view class="cu-list menu bg-white">
   <view class="cu-item" wx:for="{{privacyInfo}}" wx:key>
     <view class="content">
-      <text class="cuIcon-{{item.icon}}"></text>
-      <text class="text-grey">{{item.text}}</text>
+      <text class="cuIcon-{{item.icon}} text-{{item.leaked?'red':'grey'}}"></text>
+      <text class="text-{{item.leaked?'red':'green'}}">{{item.text}}<text wx:if="{{item.leaked}}"> [可能泄露]</text><text wx:else> [安全]</text></text>
     </view>
   </view>
 </view>

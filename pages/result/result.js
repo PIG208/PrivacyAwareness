@@ -1,4 +1,6 @@
 // pages/result/result.js
+const app = getApp();
+
 Page({
 
   /**
@@ -7,27 +9,61 @@ Page({
   data: {
     privacyInfo:[{
       icon: "circlefill",
-      text: "手机号码，邮箱bla"
+      text: "手机号码"
     },{
       icon: "circlefill",
-      text: "你的姓名信息"
+      text: "邮箱"
+    },{
+      icon: "circlefill",
+      text: "姓名"
     },{
       icon: "circlefill",
       text: "兴趣爱好"
-    }]
+    },{
+      icon: "circlefill",
+      text: "头像和用户名"
+    },{
+      icon: "circlefill",
+      text: "地址信息"
+    }],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      authorizationCount: app.globalData.authorizationCount,
+      privacyCount: 0
+    });
     const eventChannel = this.getOpenerEventChannel();
     eventChannel.on("acceptDataFromOpenedPage", data => {
       this.setData({
         username: data.username,
         phoneNum: data.phoneNum,
         email: data.email,
-        interests: data.interests
+        interests: data.interests,
+        refused: false
+      });
+      let inputCount = 0;
+      let index = 0;
+      Object.values(data).forEach(val => {
+        if(val != undefined && val.trim().length > 0){
+          this.data.privacyInfo[index].leaked = true;
+          inputCount++;
+        }
+        index++;
+      });
+      this.setData({
+        privacyInfo: this.data.privacyInfo
+      });
+      this.setData({
+        privacyCount: inputCount
+      });
+    });
+    eventChannel.on("acceptRefused", data => {
+      this.setData({
+        refused: true
       });
     });
   },

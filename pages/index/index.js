@@ -4,8 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
+    userInfo: undefined,
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     stepsList: [{
@@ -21,6 +20,12 @@ Page({
   },
   //事件处理函数
   jumpPage: function(){
+    if(this.data.userInfo != undefined){
+      app.globalData.authorizationCount = 1
+    }
+    else {
+      app.globalData.authorizationCount = 0
+    }
     wx.navigateTo({
       url: '/pages/form/form',
     })
