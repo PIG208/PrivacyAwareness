@@ -1,12 +1,10 @@
-// pages/progress bar/progressbar.js
+// pages/share/share.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      pro:0,
-      progressNum:0
 
   },
 
@@ -14,19 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      var that=this;
-      var timerpro=setInterval(function(){
-        that.data.progressNum++;
-        if (that.data.progressNum>=100){
-          wx.navigateTo({
-            url: "../result/result",
-          })
-          clearInterval(timerpro);
-        }
-        that.setData({
-          pro: that.data.progressNum,
-        });
-      },20)
+
   },
 
   /**
