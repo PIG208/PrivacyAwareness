@@ -14,19 +14,28 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      var that=this;
-      var timerpro=setInterval(function(){
-        that.data.progressNum++;
-        if (that.data.progressNum>=100){
-          wx.navigateTo({
-            url: "../result/result",
-          })
-          clearInterval(timerpro);
-        }
-        that.setData({
-          pro: that.data.progressNum,
-        });
-      },20)
+    const eventChannel = this.getOpenerEventChannel();
+    eventChannel.on("acceptDataFromOpenedPage", data => {
+      this.setData({
+        userdata: data
+      });
+    });
+    var that=this;
+    var timerpro=setInterval(function(){
+      that.data.progressNum++;
+      if (that.data.progressNum>=100){
+        wx.navigateTo({
+          url: "../result/result",
+          success: function(res) {
+            res.eventChannel.emit("acceptDataFromOpenedPage", that.data.userdata)
+          }
+        })
+        clearInterval(timerpro);
+      }
+      that.setData({
+        pro: that.data.progressNum,
+      });
+    },20)
   },
 
   /**
