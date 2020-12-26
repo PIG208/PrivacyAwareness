@@ -1,0 +1,10 @@
+<!--pages/result/result.wxml-->
+<view class="cu-chat">
+  <view class="cu-item self">
+    <view class="main">
+      <view class="content bg-green">
+        我是{{username}}，
+      </view>
+    </view>
+  </view>
+</view>

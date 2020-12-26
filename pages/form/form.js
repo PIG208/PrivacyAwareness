@@ -9,7 +9,7 @@ Page({
   },
   formSubmit: function(e){
     wx.navigateTo({
-      url: "../search/search",
+      url: "../result/result",
       success: function(res) {
         res.eventChannel.emit("acceptDataFromOpenedPage", e.detail.value)
       }

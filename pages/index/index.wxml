@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="container">
+<view class="container bg-black">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
@@ -7,14 +7,23 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-  <view class="usermotto">
-    <button class="user-motto" bindtap="JumpPage">介绍一下你自己</button>
+</view>
+<view class="bg-white padding  margin-top-xs">
+  <view class="cu-steps steps-arrow">
+    <view class="cu-item" wx:for="{{stepsList}}" wx:key>
+      <text class="cuIcon-{{item.icon}}"></text> {{item.name}}
+    </view>
   </view>
+</view>
+<view class="bg-black">
   <view class="intro">
     <text class="word">老人为何一直郁郁寡欢？</text>
     <text class="word">孩子为何常常嚎啕大哭？</text>
     <text class="word">父母又为何整日精神不振？</text>
     <text class="word">疫情期间，隔离中的我们都需要一个知己！</text>
     <text class="word">来试试这个小程序吧 它能帮你找到那个人！</text>
+  </view>
+  <view>
+    <button class="user-motto" bindtap="jumpPage">介绍一下你自己</button>
   </view>
 </view>

@@ -7,12 +7,22 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    stepsList: [{
+      icon: 'usefullfill',
+      name: '填写信息'
+    }, {
+      icon: 'radioboxfill',
+      name: '匹配知己'
+    }, {
+      icon: 'roundclosefill',
+      name: '尽情聊天'
+    }],
   },
   //事件处理函数
-  JumpPage: function(){
+  jumpPage: function(){
     wx.navigateTo({
-      url: 'pages/search/search',
+      url: '/pages/form/form',
     })
   },
   bindViewTap: function() {
