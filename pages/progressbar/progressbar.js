@@ -26,7 +26,7 @@ Page({
         that.setData({
           pro: that.data.progressNum,
         });
-      },100)
+      },20)
   },
 
   /**
