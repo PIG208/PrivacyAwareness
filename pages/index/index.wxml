@@ -8,6 +8,13 @@
     </block>
   </view>
   <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+    <button class="user-motto" bindtap="JumpPage">介绍一下你自己</button>
+  </view>
+  <view class="intro">
+    <text class="word">老人为何一直郁郁寡欢？</text>
+    <text class="word">孩子为何常常嚎啕大哭？</text>
+    <text class="word">父母又为何整日精神不振？</text>
+    <text class="word">疫情期间，隔离中的我们都需要一个知己！</text>
+    <text class="word">来试试这个小程序吧 它能帮你找到那个人！</text>
   </view>
 </view>
