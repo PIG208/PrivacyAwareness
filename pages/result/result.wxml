@@ -1,9 +1,16 @@
 <!--pages/result/result.wxml-->
-<view class="margin-top bg-white solid-bottom padding text-lg" wx:if="{{refused}}">
+<view class="margin-top bg-green solid-bottom padding text-lg text-white" wx:if="{{refused}}">
   恭喜，你通过拒绝填写自己的个人信息防止了信息泄露！
 </view>
+<view class="margin-top bg-red solid-bottom padding text-lg text-white">
+  <text class="cuIcon-warnfill"></text> 切勿轻信第三方平台，泄露你的隐私信息！
+</view>
+<view class="margin-top bg-white solid-bottom padding">
+  <text class="cuIcon-noticefill text-green"></text> 实际上，我们并不是同城交友平台！而是专注于向个人科普个人隐私安全的公益项目。我们统计了你在这个小程序中所授权或填写给我们的个人隐私信息，对你的个人隐私安全意识做出了简要的评估。
+  <view class="text-grey text-sm margin-top">你的隐私信息不会被保存或泄露，我们不会知道您所填写的任何信息，本页面展示的内容仅作演示用。</view>
+</view>
 <view class="margin-top bg-white solid-bottom padding text-lg">
-  在浏览的过程中，你为我们授权了<text class="text-xl">{{authorizationCount}}</text>项权限，填写了<text class="text-xl">{{privacyCount}}</text>条隐私信息
+  在浏览的过程中，你为我们授权了 <text class="text-sl">{{authorizationCount}}</text> 项权限，填写了 <text class="text-sl">{{privacyCount}}</text> 条隐私信息
 </view>
 <view class="cu-list menu bg-white">
   <view class="cu-item" wx:for="{{privacyInfo}}" wx:key>
@@ -19,18 +26,65 @@
   {{100 - authorizationCount * 20 - privacyCount * 15}}
   </view>
 </view>
-<view class="margin-top bg-green solid-bottom padding">
-  <view class="text-center text-lg">
-    <text class="text-white">分享</text>
+<view class="bg-white padding text-left">
+  <view wx:for="{{comments}}" wx:key>
+    <view wx:if="{{item.bounds[0] <= 100 - authorizationCount * 20 - privacyCount * 15 && item.bounds[1] >= 100 - authorizationCount * 20 - privacyCount * 15}}" class="text-lg">
+      <view class="text-xl"><text class="text-green">称号</text> {{item.title}}</view>
+      <view class="margin-top">{{item.text}}</view>
+    </view>
   </view>
 </view>
-
-<view class="cu-chat">
-  <view class="cu-item self">
-    <view class="main">
-      <view class="content bg-green">
-        我是{{username}}
+<view class="bg-yellow text-white padding">
+  <text class="cuIcon-warnfill"></text> 你的信息可能会被用来做什么？
+</view>
+<view wx:if="{{privacyInfo[0].leaked && privacyInfo[1].leaked}}" class="margin-top">
+  <view class="bg-white padding solid-bottom"><text class="cuIcon-messagefill"></text> 短信诈骗</view>
+  <view class="cu-chat">
+    <view class="cu-item">
+      <view class="main">
+        <view class="content">
+          我是{{username}}，我{{phoneNum}}的手机号停机了，你能往我卡里转点钱吗？急用！！！！卡号是xxxxxxxxxxxx
+        </view>
       </view>
     </view>
+  </view>
+</view>
+<view wx:if="{{privacyInfo[1].leaked || privacyInfo[2].leaked}}" class="margin-top">
+  <view class="bg-white padding solid-bottom"><text class="cuIcon-cart"></text> 流入信息贩卖产业</view>
+  <view>
+    <view class="bg-white padding grid col-4">
+      <view>名称</view>
+      <view>手机</view>
+      <view>邮箱</view>
+      <view class="text-grey">0.01元一条</view>
+    </view>
+    <view class="bg-white padding solid-bottom grid col-4">
+      <view>王二小</view>
+      <view>19219123</view>
+      <view>319319@aaq.com</view>
+    </view>
+    <view class="bg-white padding solid-bottom grid col-4">
+      <view>张三</view>
+      <view>139121213</view>
+      <view>939131@aaaq.com</view>
+    </view>
+    <view class="bg-white padding solid-bottom grid col-4">
+      <view>{{username}}</view>
+      <view>{{phoneNum}}</view>
+      <view>{{email}}</view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{privacyInfo[2].leaked}}" class="margin-top">
+  <view class="bg-white padding solid-bottom"><text class="cuIcon-mail"></text> 垃圾广告推送</view>
+  <view class="bg-white padding">发送到 <text class="text-blue">{{email}}</text> 的邮件</view>
+  <view class="bg-white padding grid col-3">
+    <view><text class="cuIcon-mail text-orange"></text> 澳门赌场</view>
+    <view class="text-grey">全国首家线上赌场正式开业，请访问www.axaasdaxas.com....</view>
+  </view>
+</view>
+<view class="margin-top bg-green solid-bottom padding shadow">
+  <view class="text-center text-lg">
+    <text class="text-white" bindtap="share">测测你好友的隐私安全意识</text>
   </view>
 </view>
